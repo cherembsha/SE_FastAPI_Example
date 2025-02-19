@@ -11,6 +11,10 @@ app = FastAPI()
 classifier = pipeline("sentiment-analysis")
 
 
+def get_params(text: str):
+    return classifier(text)
+
+
 @app.get("/")
 def root():
     return {"FastApi service started!"}
